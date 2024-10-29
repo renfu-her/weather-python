@@ -8,6 +8,8 @@ from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, QH
 from PyQt6.QtCore import Qt, QTimer
 from PyQt6.QtGui import QIcon, QAction, QPixmap
 import darkdetect  # 用於檢測系統主題
+import schedule
+import time
 
 # 載入 .env 文件
 load_dotenv()
@@ -54,9 +56,9 @@ class WeatherApp(QMainWindow):
         # 設置自動更新
         self.timer = QTimer()
         self.timer.timeout.connect(self.get_weather)
-        self.timer.start(1800000)  # 30分鐘更新一次
+        self.timer.start(1800000)  # 30分鐘更新一次 (1800000 毫秒)
         
-        self.get_weather()
+        self.get_weather()  # 初始化時先獲取一次天氣
 
     def setup_ui(self):
         central_widget = QWidget()
