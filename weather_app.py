@@ -18,14 +18,13 @@ class WeatherApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("天氣小工具")
-        self.setGeometry(1200, 100, 300, 200)
+        self.setFixedSize(300, 200)
         
         # 設置窗口樣式為 Windows 原生樣式
         self.setWindowFlags(
             Qt.WindowType.Window |
             Qt.WindowType.WindowCloseButtonHint |
-            Qt.WindowType.WindowMinimizeButtonHint |
-            Qt.WindowType.MSWindowsFixedSizeDialogHint  # Windows 固定大小風格
+            Qt.WindowType.WindowMinimizeButtonHint
         )
         
         # 天氣代碼對應的圖標
